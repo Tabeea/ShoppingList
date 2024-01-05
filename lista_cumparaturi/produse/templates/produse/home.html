@@ -1,0 +1,39 @@
+{% extends 'produse/base.html' %}
+
+{% block content %}
+    <h2>Add the products to the list</h2>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ITEMS</th>
+                <th>STATUS</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if products %}
+                {% for product in products %}
+                    {% if product.cumparat %}
+                        <tr class="table-success">
+                            <td class="linethrough">{{ product.product }}</td>
+                            <td><a href="{% url 'change_status' product.id %}">Buy the same product again</a></td>
+                            <td><a href="{% url 'delete' product.id %}">Remove the product from the list</a></td>
+                        </tr>
+                    {% else %}
+                        <tr class="table-danger">
+                            <td>{{ product.product }}</td>
+                            <td><a href="{% url 'change_status' product.id %}">I have already purchased the product</a></td>
+                            <td><a href="{% url 'delete' product.id %}">Remove the product from the list</a></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+{% endblock %}

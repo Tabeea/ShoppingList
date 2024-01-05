@@ -4,7 +4,7 @@ Hello, I'm Tabeea, diving into Python programming. Just embarked on my GitHub jo
 Excited to learn, collaborate, and grow! 🚀
 
 
-# Project name: ShoppingList 
+## Project name: ShoppingList 
 
 ### Intro
 
@@ -48,7 +48,8 @@ https://git-scm.com/downloads
   Right-click in a local folder where you want to clone the project
   and click on **GitBash Here**:
   ![gitbash here](https://github.com/Tabeea/ShoppingList/blob/main/Screenshots/Setup.png?raw=true)
-  Then in your terminal run the following commands:
+  
+Then in your terminal run the following commands:
   ```bash
   $ git clone https://github.com/Tabeea/ShoppingList.git
   ```

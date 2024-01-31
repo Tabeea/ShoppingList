@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 
@@ -8,10 +8,11 @@ urlpatterns = [
     path('about/' , views.about, name='about'),
     path('delete/<id>', views.delete, name='delete'),
     path('cumpara/<id>', views.change_status, name='change_status'),
+    path('clothes/' , views.clothes, name='clothes'),
+
+    path('gallery/', views.gallery, name='gallery'),
+    path('photo/', views.viewPhoto, name='photo'),
+    path('addphoto/', views.addPhotos, name='addphoto')
 ]
 
-# # Code for reading css
-# from django.conf import settings
-# from django.conf.urls.static import static
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

@@ -1,5 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
 
+# Update shoppinglist
 class Products(models.Model):
     product = models.CharField(max_length=100)
     cumparat = models.BooleanField(default=False)
@@ -7,3 +9,30 @@ class Products(models.Model):
     def __str__(self):
         return self.product + '-->' + str(self.cumparat)
 
+
+# Upload photos page
+class Category(models.Model):
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=100, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Photo(models.Model):
+    class Meta:
+        verbose_name = 'Photo'
+        verbose_name_plural = 'Photos'
+
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    image = models.ImageField(null=False, blank=False)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.description
+
+# We have to install library pillow (it was used for image processes library). In terminal run: python -m pip install Pillow

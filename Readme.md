@@ -15,7 +15,7 @@ Furthermore, the application provides a dedicated page with tips to guide users 
 
 ## Screenshots
 
-![App Screenshot](https://github.com/Tabeea/ShoppingList/blob/main/Screenshots/Home.png?raw=true)
+![App Screenshot](https://github.com/Tabeea/ShoppingList/blob/main/Screenshots/Home_page.png?raw=true)
 
 
 ## 🛠 Skills

@@ -46,27 +46,31 @@ def clothes(request):
 def gallery(request):
     category = request.GET.get('category')
     if category == None:
-        photos=Photo.objects.all()
+        photos = Photo.objects.all()
     else:
         photos = Photo.objects.filter(category__name=category)
 
     categories = Category.objects.all()
-    photos=Photo.objects.all()
+    #photos=Photo.objects.all()
 
     context = {'categories': categories, 'photos': photos}
     return render(request, 'produse/gallery.html', context)
 
 
-def viewPhoto(request):
-    photo = Photo.objects.get()
+def viewPhoto(request,id):
+    photo = Photo.objects.get(id=id)
     return render(request, 'produse/photo.html', {'photo': photo})
 
+def deletePhoto(request, id):
+    photo = Photo.objects.get(pk=id)
+    photo.delete()
+    return redirect('gallery')
 def addPhotos(request):
     categories = Category.objects.all()
 
     if request.method == 'POST':
         data = request.POST
-        images = request.FILES.get('images')
+        images = request.FILES.getlist('images')
 
         if data['category'] != 'none':
             category = Category.objects.get(id=data['category'])

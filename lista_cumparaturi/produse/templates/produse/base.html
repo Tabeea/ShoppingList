@@ -11,35 +11,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="{% static 'style.css' %}" rel="stylesheet">
   </head>
-
-  <style>
-    body
-        {
-              background-image: url(https://images.pexels.com/photos/5650049/pexels-photo-5650049.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=650&amp;dpr=1%22%20srcset=%22https://images.pexels.com/photos/5650049/pexels-photo-5650049.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1%201x,%20https://images.pexels.com/photos/5650049/pexels-photo-5650049.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2%202x);
-              background-size: cover;
-              background-repeat: no-repeat;
-        }
-  </style>
-
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark grey-navbar">
       <div class="container">
         <span class="navbar-brand" href="/home">Welcome to Shopping List</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-            <a class="nav-link" href="/about">Food</a>
-            <a class="nav-link" href="/clothes">Clothes</a>
-            <a class="nav-link" href="/addphoto">Upload photos</a>
-
+            <div class="nav-item-container">
+              <a class="nav-link {% if request.path == '/' %}active{% endif %}"  href="/">Home</a>
+            </div>
+            <div class="nav-item-container">
+              <a class="nav-link {% if request.path == '/about' %}active{% endif %}"  href="/about">Food</a>
+            </div>
+            <div class="nav-item-container">
+              <a class="nav-link {% if request.path == '/clothes' %}active{% endif %}" href="/clothes">Clothes</a>
+            </div>
+            <div class="nav-item-container">
+              <a class="nav-link {% if request.path == '/gallery' %}active{% endif %}" href="/gallery">Upload photos</a>
+            </div>
+          </div>
         </div>
-      </div>
     </nav>
+
     <br>
+
     <div class="container">
     {% block content %}
     {% endblock %}

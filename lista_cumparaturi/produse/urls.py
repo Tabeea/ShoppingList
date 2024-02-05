@@ -11,7 +11,8 @@ urlpatterns = [
     path('clothes/' , views.clothes, name='clothes'),
 
     path('gallery/', views.gallery, name='gallery'),
-    path('photo/', views.viewPhoto, name='photo'),
+    path('photo/<str:id>', views.viewPhoto, name='photo'),
+    path('deletePhoto/<str:id>', views.deletePhoto, name='deletePhoto'),
     path('addphoto/', views.addPhotos, name='addphoto')
 ]
 

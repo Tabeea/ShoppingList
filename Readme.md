@@ -76,7 +76,13 @@ Command Prompt
 ```
 ####
 
-- Step 10 - Run the project
+- Step 10 - Install Pillow in Terminal
+
+```bash
+python -m pip install Pillow
+```
+
+- Step 11 - Run the project
 
 !!! You have to be in folder ShoppingList\lista_cumparaturi before running:
 ```bash
@@ -85,7 +91,7 @@ python manage.py runserver
 
 ####
 
-- Step 11 - Open the localhost link (http://127.0.0.1:8000/) and enjoy!  
+- Step 12 - Open the localhost link (http://127.0.0.1:8000/) and enjoy!  
 ## Feedback
 
 If you have any feedback, please reach out at simiontabeea@gmail.com

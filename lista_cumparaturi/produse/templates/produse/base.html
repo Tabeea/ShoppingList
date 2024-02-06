@@ -13,7 +13,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark grey-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark grey-navbar fixed-top">
       <div class="container">
         <span class="navbar-brand" href="/home">Welcome to Shopping List</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,18 +22,19 @@
 
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
           <div class="navbar-nav ms-auto">
             <div class="nav-item-container">
               <a class="nav-link {% if request.path == '/' %}active{% endif %}"  href="/">Home</a>
             </div>
             <div class="nav-item-container">
-              <a class="nav-link {% if request.path == '/about' %}active{% endif %}"  href="/about">Food</a>
+              <a class="nav-link {% if request.path == '/about/' %}active{% endif %}"  href="/about">Food</a>
             </div>
             <div class="nav-item-container">
-              <a class="nav-link {% if request.path == '/clothes' %}active{% endif %}" href="/clothes">Clothes</a>
+              <a class="nav-link {% if request.path == '/clothes/' %}active{% endif %}" href="/clothes">Clothes</a>
             </div>
             <div class="nav-item-container">
-              <a class="nav-link {% if request.path == '/gallery' %}active{% endif %}" href="/gallery">Upload photos</a>
+              <a class="nav-link {% if request.path == '/gallery/' %}active{% endif %}" href="/gallery">Upload photos</a>
             </div>
           </div>
         </div>

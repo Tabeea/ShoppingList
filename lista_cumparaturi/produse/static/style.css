@@ -5,39 +5,30 @@
 .grey-navbar {
     background-color: #808080 !important; /* Culoare gri */
     border-color: #808080 !important;
+    height: 60px;
 }
 
-.grey-navbar .navbar-brand,
-.grey-navbar .navbar-nav .nav-link {
-    color: #fff; /* Culoarea textului pentru link-uri și brand */
+.grey-navbar .navbar-brand {
+    color: #fff; /* Culoarea textului pentru brand */
+    font-weight: bold
 }
 
-.grey-navbar .navbar-toggler-icon {
-    background-color: #fff; /* Culoarea iconiței burger meniu */
-}
-
-.navbar-brand {
-    color: #fff;
+.grey-navbar .navbar-nav .nav-link  {
+    color: white; /* Culoarea textului pentru link-uri */
     font-weight: bold;
 }
+
+.grey-navbar .navbar-nav .nav-link.active  {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+}
+
 /* Container pentru fiecare categorie */
 .nav-item-container {
     display: inline-block;
     margin-right: 20px; /* Spațiere între categorii */
-    z-index: 1; /* Asigură-te că navbar-ul este deasupra imaginii de fundal */
-    color: #00ff00;
 }
-
-.nav-link:hover {
-    color: #fff;
-    font-weight: bold;
-}
-/* Culoare verde pentru link-ul activ */
-.nav-link.active {
-    color: #00ff00;
-    font-weight: bold;
-}
-
 
 /* Editare imagine fundal Home*/
 body
@@ -46,7 +37,8 @@ body
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
+      z-index: -1;  /* Navbar-ul este deasupra imaginii de fundal */
+      padding-top: 60px !important;
 }
 
 /* Editare tabel din pagina Home */
@@ -54,13 +46,14 @@ body
     text-decoration: line-through;
 }
 
-/* Editare text din pagina Clothes */
+/* Editare fundal alb pentru text*/
 .white {
-    display: inline-block;
     background-color: white;
-    padding: 5px;
-
+    padding: 15px;
 }
 
-
+/* Vizualizare text*/
+.textdescription{
+    white-space: pre-wrap;
+}
 

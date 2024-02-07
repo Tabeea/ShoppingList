@@ -4,7 +4,7 @@
 <body>
         <style>
             .image-thumbail {
-                height: 200px;
+                height: 300px;
                 object-fit: cover;
             }
 
@@ -13,6 +13,7 @@
                 color: black;
             }
         </style>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -49,15 +50,15 @@
                                 <div class="card-body">
                                     <small>Category: {{photo.category.name}}</small>
                                 </div>
-                                <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                                <a href="{% url 'deletePhoto' photo.id %}" class="btn btn-outline-dark btn-sm m-1">Delete</a>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1 custom-btn">View</a>
+                                    <a href="{% url 'deletePhoto' photo.id %}" class="btn btn-outline-dark btn-sm m-1 custom-btn">Delete</a>
+                                </div>
                             </div>
                         </div>
                         {% empty %}
                         <h3>No photos...</h3>
                         {% endfor %}
-
-
                     </div>
                 </div>
             </div>

@@ -57,3 +57,8 @@ body
     white-space: pre-wrap;
 }
 
+/*Editare butoane view and delete din Upload photos*/
+
+.custom-btn {
+    width: 60%;  /* Setează lățimea butonului la 50% din lățimea containerului */
+}
